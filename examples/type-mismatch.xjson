@@ -1,0 +1,18 @@
+/*
+  Override with a NON-COMBINABLE type.
+
+  If you `override` (merge) a value but provide a type that cannot be merged
+  (a number over an object, a string over an array), a WARNING is emitted and
+  the value is SUBSTITUTED.
+
+  Severity: warning (depends on the data; the base could vary).
+*/
+override extends "./base.xjson" {
+
+  // object <- number: ⚠️ warning, but substitutes -> server = 1234
+  override server: 1234;
+
+  // array <- string: ⚠️ warning, but substitutes -> tags = "now I'm a string"
+  override tags: "now I'm a string";
+
+}

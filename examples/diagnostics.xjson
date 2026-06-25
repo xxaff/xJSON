@@ -1,0 +1,28 @@
+/*
+  Cases that MUST produce diagnostics. This file contains errors and warnings
+  ON PURPOSE; it serves as reference and as a fixture for the parser and the
+  editor. It is NOT an example of correct usage.
+
+  Severities:
+    - structural (data-independent)   -> error
+    - data-dependent (the base varies) -> warning
+*/
+override extends "./base.xjson" {
+
+  override server: {
+    add port2: 1;
+    clear;                       // ❌ error: `clear` is only valid at the START of the block
+  };
+
+  override features: {
+    inherit;
+    add x: 1;
+    inherit;                     // ❌ error: duplicate `inherit`
+  };
+
+  override user: {
+    add role2: "x" after nope;   // ⚠️ warning: reference key `nope` does not exist
+    delete ghost;                // ⚠️ warning: `ghost` does not exist in the base
+  };
+
+}

@@ -1,0 +1,18 @@
+/*
+  Extension chain (2/2):   base.xjson -> level1.xjson -> level2.xjson
+
+  level2 extends level1, which in turn extends base. The runtime flattens the
+  chain from the root (base) downwards and applies the overrides in order.
+*/
+override extends "./level1.xjson" {
+
+  version: "1.2.0";               // replaces what level1 set
+  add stage2: "level2";
+
+  override server: {
+    add region: "eu-west";         // added on top of host/port/tls/timeout/mask
+  };
+
+  delete description;             // removes a key that came from base
+
+}

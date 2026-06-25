@@ -1,0 +1,20 @@
+/*
+  Override WITHOUT `extends`: an "orphan" `override { }` block.
+
+  The base is NOT declared in the file: the host/parser must inject it via
+  configuration. In the editor, without that configuration, the base is unknown,
+  so key references are treated as data-dependent (-> warning, not error).
+
+  Useful for reusable override fragments, applicable to different bases.
+  (Compare with the other examples, which do declare `override extends "...").
+*/
+override {
+
+  override server: {
+    port: 9090;
+    add tls: true;
+  };
+
+  add banner: "injected value";
+
+}

@@ -1,0 +1,51 @@
+/*
+  base.xjson — base document (pure JSON5).
+
+  An .xjson file is A SINGLE block, just like JSON5. Without `override` blocks,
+  an .xjson is valid JSON5: comments, quoted or unquoted keys, single or double
+  quotes, numbers (incl. hex), null, nesting and trailing commas.
+
+  This is the base extended by the other examples (objects, arrays,
+  inherit-and-order, type-mismatch and the extends-chain/).
+*/
+{
+  name: "xJSON",
+  version: "1.0.0",
+  enabled: true,
+  retries: 3,
+  ratio: 0.75,
+  description: 'Allows single and double quotes',
+
+  tags: ["json5", "override", "schema"],
+  plugins: ["lint", "format"],
+
+  server: {
+    host: "localhost",
+    port: 8080,
+    timeout: null,
+    mask: 0xFF,
+    headers: {
+      accept: "application/json",
+      auth: null,
+    },
+  },
+
+  features: {
+    logging: true,
+    cache: {
+      enabled: false,
+      ttl: 60,
+      store: {
+        kind: "memory",
+        max: 100,
+      },
+    },
+  },
+
+  user: {
+    id: 1,
+    name: "Ada",
+    role: "admin",
+    active: true,
+  },
+}

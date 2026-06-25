@@ -1,0 +1,19 @@
+/*
+  A schema that EXTENDS another schema using XJSON's `extends`.
+
+  It reuses user.schema.xjson and adds a property and a requirement, so schemas
+  are inherited and composed without duplicating definitions.
+*/
+override extends "./user.schema.xjson" {
+
+  title: "Admin";
+
+  override properties: {
+    add permissions: { type: "array", items: { type: "string" } };
+  };
+
+  override required: [
+    add "permissions";   // required becomes ["id", "name", "permissions"]
+  ];
+
+}

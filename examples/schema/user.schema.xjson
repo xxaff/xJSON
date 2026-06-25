@@ -1,0 +1,21 @@
+/*
+  A JSON Schema (Draft 2020-12) written in XJSON.
+
+  It is STANDARD JSON Schema: only the syntax changes (it is JSON5/XJSON, with
+  comments and unquoted keys). Being XJSON, a schema can also extend another one
+  via `extends` (see admin.schema.xjson).
+*/
+{
+  $schema: "https://json-schema.org/draft/2020-12/schema",
+  $id: "https://example.com/schemas/user",
+  title: "User",
+  type: "object",
+  required: ["id", "name"],
+  properties: {
+    id:    { type: "integer", minimum: 1 },
+    name:  { type: "string", minLength: 1 },
+    email: { type: "string", format: "email" },
+    role:  { type: "string", enum: ["admin", "user", "guest"] },
+  },
+  additionalProperties: false,
+}

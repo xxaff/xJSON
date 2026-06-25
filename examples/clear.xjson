@@ -1,0 +1,20 @@
+/*
+  `clear`: empties a collection. It is ONLY valid at the START of the block
+  (semantics: "inherit nothing, start from scratch"). Works for objects and arrays.
+*/
+override extends "./base.xjson" {
+
+  // clear on an OBJECT: discard what is inherited and rebuild
+  override user: {
+    clear;               // inherited user -> {}
+    add id: 99;
+    add name: "New";     // result: { id: 99, name: "New" }
+  };
+
+  // clear on an ARRAY
+  override tags: [
+    clear;               // inherited tags -> []
+    add "only";          // result: ["only"]
+  ];
+
+}

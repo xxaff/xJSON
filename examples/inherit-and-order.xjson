@@ -1,0 +1,45 @@
+/*
+  Controlling KEY ORDER: `inherit` and relative position (before/after).
+
+  - Every operation that NAMES a key positions it in textual order.
+  - `inherit` marks where the block of non-mentioned inherited keys is poured
+    (in base order). Without an explicit `inherit`, it behaves as if placed at
+    the START.
+  - The `before|after <key>` modifier goes between the name and the optional
+    `:value`:    <op> <prop> (before|after) <other> [: value]
+  - In objects, position is by key name (not by index).
+*/
+override extends "./base.xjson" {
+
+  // inherit + MOVE by textual order
+  // user: id, name, role, active
+  override user: {
+    override role;       // moves role
+    inherit;             // non-mentioned inherited keys (id, name, active), in base order
+    override id;         // moves id
+    // Resulting keys: role, name, active, id
+  };
+
+  // MOVE with before/after  +  EXTEND (merge) a subproperty with `after`
+  // server: host, port, timeout, mask, headers
+  override server: {
+    override timeout before host;        // move: before
+    override mask after host;            // move: after
+    override headers after port: {       // extend subproperty (merge) + reposition (after)
+      add encoding: "gzip";
+    };
+    inherit;
+  };
+
+  // ADD with before/after  +  EXTEND (merge) a subproperty with `before`
+  // features: logging, cache
+  override features: {
+    add audit before logging: true;      // add new: before
+    add metrics after logging: false;    // add new: after
+    override cache before logging: {      // extend subproperty (merge) + reposition (before)
+      enabled: true;
+    };
+    inherit;
+  };
+
+}
