@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "XJSON",
+  "scopeName": "source.xjson",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#property-key" },
+    { "include": "#keywords" },
+    { "include": "#constants" },
+    { "include": "#numbers" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.xjson", "begin": "//", "end": "$" },
+        { "name": "comment.block.xjson", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.xjson",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [{ "include": "#string-escape" }]
+        },
+        {
+          "name": "string.quoted.single.xjson",
+          "begin": "'",
+          "end": "'",
+          "patterns": [{ "include": "#string-escape" }]
+        }
+      ]
+    },
+    "string-escape": {
+      "name": "constant.character.escape.xjson",
+      "match": "\\\\(?:[\"'\\\\bfnrtv0/]|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|\\r?\\n)"
+    },
+    "property-key": {
+      "name": "support.type.property-name.xjson",
+      "match": "([A-Za-z_$][\\w$]*)(?=\\s*:)"
+    },
+    "keywords": {
+      "name": "keyword.control.xjson",
+      "match": "\\b(?:override|extends|add|delete|clear|inherit|before|after)\\b"
+    },
+    "constants": {
+      "name": "constant.language.xjson",
+      "match": "\\b(?:true|false|null)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.xjson",
+      "match": "(?<![\\w$.])[+-]?(?:0[xX][0-9a-fA-F]+|Infinity|NaN|(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?)"
+    },
+    "punctuation": {
+      "patterns": [
+        { "name": "punctuation.definition.block.xjson", "match": "[{}]" },
+        { "name": "punctuation.definition.array.xjson", "match": "[\\[\\]]" },
+        { "name": "punctuation.section.parens.xjson", "match": "[()]" },
+        { "name": "punctuation.separator.xjson", "match": "[,:]" }
+      ]
+    }
+  }
+}

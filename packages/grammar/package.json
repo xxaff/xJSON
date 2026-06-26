@@ -1,0 +1,19 @@
+{
+  "name": "@xjson/grammar",
+  "version": "0.1.0",
+  "description": "TextMate grammar and language configuration for XJSON.",
+  "license": "MIT",
+  "keywords": ["xjson", "textmate", "grammar", "syntax-highlighting"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxaff/xJSON.git",
+    "directory": "packages/grammar"
+  },
+  "homepage": "https://github.com/xxaff/xJSON#readme",
+  "bugs": "https://github.com/xxaff/xJSON/issues",
+  "files": ["syntaxes", "language-configuration.json"],
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.1.0"
+  }
+}
