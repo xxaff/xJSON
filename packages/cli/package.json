@@ -1,0 +1,47 @@
+{
+  "name": "@xjson/cli",
+  "version": "0.1.0",
+  "description": "Command-line tool for the XJSON format: evaluate, validate and check.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": ["xjson", "cli", "config", "validate"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxaff/xJSON.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/xxaff/xJSON#readme",
+  "bugs": "https://github.com/xxaff/xJSON/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "prepack": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@xjson/core": "workspace:^",
+    "@xjson/schema": "workspace:^"
+  },
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "bin": {
+      "xjson": "./dist/cli.js"
+    },
+    "exports": {
+      ".": {
+        "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+        "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      }
+    }
+  }
+}
