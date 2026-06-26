@@ -13,7 +13,7 @@ import {
   evaluate,
   parse,
   tokenize,
-} from "@xjson/core";
+} from "@x-json/core";
 import { type Position, Range } from "vscode-languageserver-types";
 
 export interface AnalyzeOptions {

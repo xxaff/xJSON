@@ -34,10 +34,10 @@ importers:
 
   apps/vscode:
     dependencies:
-      '@xjson/core':
+      '@x-json/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@xjson/language-server':
+      '@x-json/language-server':
         specifier: workspace:*
         version: link:../../packages/language-server
       vscode-languageclient:
@@ -50,7 +50,7 @@ importers:
       '@vscode/vsce':
         specifier: ^3.2.1
         version: 3.9.2
-      '@xjson/grammar':
+      '@x-json/grammar':
         specifier: workspace:*
         version: link:../../packages/grammar
       esbuild:
@@ -59,10 +59,10 @@ importers:
 
   packages/cli:
     dependencies:
-      '@xjson/core':
+      '@x-json/core':
         specifier: workspace:^
         version: link:../core
-      '@xjson/schema':
+      '@x-json/schema':
         specifier: workspace:^
         version: link:../schema
 
@@ -79,10 +79,10 @@ importers:
 
   packages/language-server:
     dependencies:
-      '@xjson/core':
+      '@x-json/core':
         specifier: workspace:^
         version: link:../core
-      '@xjson/schema':
+      '@x-json/schema':
         specifier: workspace:^
         version: link:../schema
       vscode-languageserver:
@@ -100,7 +100,7 @@ importers:
 
   packages/schema:
     dependencies:
-      '@xjson/core':
+      '@x-json/core':
         specifier: workspace:^
         version: link:../core
       ajv:

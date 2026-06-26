@@ -1,5 +1,5 @@
 {
-  "name": "@xjson/core",
+  "name": "@x-json/core",
   "version": "0.1.0",
   "description": "Parser and evaluator for XJSON, a superset of JSON5 with overrides and cross-file inheritance.",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import { evaluate } from "@xjson/core";
+import { evaluate } from "@x-json/core";
 import { describe, expect, it } from "vitest";
 import { evalValue } from "./helpers";
 

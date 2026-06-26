@@ -24,11 +24,11 @@
 
     "baseUrl": ".",
     "paths": {
-      "@xjson/core": ["./packages/core/src/index.ts"],
-      "@xjson/core/node": ["./packages/core/src/node-host.ts"],
-      "@xjson/schema": ["./packages/schema/src/index.ts"],
-      "@xjson/cli": ["./packages/cli/src/index.ts"],
-      "@xjson/language-server": ["./packages/language-server/src/index.ts"]
+      "@x-json/core": ["./packages/core/src/index.ts"],
+      "@x-json/core/node": ["./packages/core/src/node-host.ts"],
+      "@x-json/schema": ["./packages/schema/src/index.ts"],
+      "@x-json/cli": ["./packages/cli/src/index.ts"],
+      "@x-json/language-server": ["./packages/language-server/src/index.ts"]
     }
   }
 }

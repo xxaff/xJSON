@@ -1,5 +1,5 @@
 {
-  "name": "@xjson/grammar",
+  "name": "@x-json/grammar",
   "version": "0.1.0",
   "description": "TextMate grammar and language configuration for XJSON.",
   "license": "MIT",

@@ -1,5 +1,5 @@
-import { MemoryHost } from "@xjson/core";
-import { analyzeDiagnostics, completions, definitionAt } from "@xjson/language-server";
+import { MemoryHost } from "@x-json/core";
+import { analyzeDiagnostics, completions, definitionAt } from "@x-json/language-server";
 import { describe, expect, it } from "vitest";
 
 describe("language-server analyzer", () => {

@@ -1,4 +1,4 @@
-# Core API (`@xjson/core`)
+# Core API (`@x-json/core`)
 
 ## `evaluate(source, options?)`
 
@@ -32,8 +32,8 @@ interface XJSONHost {
 }
 ```
 
-- `MemoryHost` (from `@xjson/core`) — in-memory, ideal for tests and browsers.
-- `NodeHost` (from `@xjson/core/node`) — backed by the filesystem, with relative
+- `MemoryHost` (from `@x-json/core`) — in-memory, ideal for tests and browsers.
+- `NodeHost` (from `@x-json/core/node`) — backed by the filesystem, with relative
   and `node_modules` resolution.
 
 ## Cycle safety

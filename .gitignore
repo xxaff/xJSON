@@ -10,7 +10,7 @@ out/
 *.tsbuildinfo
 *.vsix
 
-# VSCode extension build artifacts (copied from @xjson/grammar at build time)
+# VSCode extension build artifacts (copied from @x-json/grammar at build time)
 /apps/vscode/syntaxes/
 /apps/vscode/language-configuration.json
 

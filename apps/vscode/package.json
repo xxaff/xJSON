@@ -117,14 +117,14 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@xjson/core": "workspace:*",
-    "@xjson/language-server": "workspace:*",
+    "@x-json/core": "workspace:*",
+    "@x-json/language-server": "workspace:*",
     "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
     "@vscode/vsce": "^3.2.1",
-    "@xjson/grammar": "workspace:*",
+    "@x-json/grammar": "workspace:*",
     "esbuild": "^0.24.2"
   }
 }

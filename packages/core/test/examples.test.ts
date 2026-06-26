@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { type EvaluateResult, evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
+import { type EvaluateResult, evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
 import { describe, expect, it } from "vitest";
 import { errorCodes, warningCodes } from "./helpers";
 

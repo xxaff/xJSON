@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
-import { format } from "@xjson/language-server";
+import { evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
+import { format } from "@x-json/language-server";
 import { describe, expect, it } from "vitest";
 
 const examplesDir = resolve(dirname(fileURLToPath(import.meta.url)), "../../../examples");

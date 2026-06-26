@@ -1,5 +1,5 @@
-import { type Diagnostic, type XJSONHost, evaluate } from "@xjson/core";
-import { validateValue } from "@xjson/schema";
+import { type Diagnostic, type XJSONHost, evaluate } from "@x-json/core";
+import { validateValue } from "@x-json/schema";
 
 export interface CliEnv {
   /** Host used to resolve and read `extends` targets. */

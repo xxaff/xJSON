@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { NodeHost } from "@xjson/core/node";
+import { NodeHost } from "@x-json/core/node";
 import { type CliEnv, run } from "./index";
 
 function defaultEnv(): CliEnv {

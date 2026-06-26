@@ -1,6 +1,6 @@
 import { basename, join } from "node:path";
-import { evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
+import { evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
 import {
   EventEmitter,
   type ExtensionContext,

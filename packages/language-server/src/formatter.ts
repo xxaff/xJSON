@@ -1,4 +1,4 @@
-import type { Token } from "@xjson/core";
+import type { Token } from "@x-json/core";
 import { lex } from "./shared";
 
 type Kind =

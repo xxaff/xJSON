@@ -1,4 +1,4 @@
-import { MemoryHost, evaluate } from "@xjson/core";
+import { MemoryHost, evaluate } from "@x-json/core";
 import { describe, expect, it } from "vitest";
 import { errorCodes } from "./helpers";
 

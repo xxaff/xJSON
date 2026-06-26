@@ -1,4 +1,4 @@
-import type { ArrayOp, Range as CoreRange, Document, ObjectOp, ValueNode } from "@xjson/core";
+import type { ArrayOp, Range as CoreRange, Document, ObjectOp, ValueNode } from "@x-json/core";
 import {
   type CodeLens,
   type Command,

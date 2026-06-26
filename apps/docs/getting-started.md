@@ -3,14 +3,14 @@
 ## Install
 
 ```sh
-pnpm add @xjson/core
+pnpm add @x-json/core
 ```
 
 ## Evaluate a document
 
 ```ts
-import { evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
+import { evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
 import { readFileSync } from "node:fs";
 
 const path = "/abs/path/to/config.xjson";

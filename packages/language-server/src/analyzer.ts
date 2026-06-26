@@ -7,7 +7,7 @@ import {
   type Diagnostic as XDiagnostic,
   type XJSONHost,
   evaluate,
-} from "@xjson/core";
+} from "@x-json/core";
 import {
   type CodeAction,
   CodeActionKind,

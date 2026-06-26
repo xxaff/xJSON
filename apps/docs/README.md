@@ -12,11 +12,11 @@
 
 | Package | Description |
 |---|---|
-| `@xjson/core` | Parser, evaluator and diagnostics. Pure, no I/O (file access via a host). |
-| `@xjson/schema` | JSON Schema written in XJSON, validated with AJV. |
-| `@xjson/language-server` | Language Server (LSP): diagnostics, go-to-definition, completion. |
-| `@xjson/grammar` | TextMate grammar + language configuration (portable). |
-| `@xjson/cli` | `eval` / `validate` / `check` commands. |
+| `@x-json/core` | Parser, evaluator and diagnostics. Pure, no I/O (file access via a host). |
+| `@x-json/schema` | JSON Schema written in XJSON, validated with AJV. |
+| `@x-json/language-server` | Language Server (LSP): diagnostics, go-to-definition, completion. |
+| `@x-json/grammar` | TextMate grammar + language configuration (portable). |
+| `@x-json/cli` | `eval` / `validate` / `check` commands. |
 | `xjson-vscode` | VS Code extension (highlighting + LSP client). |
 
 ## At a glance

@@ -1,5 +1,9 @@
 # xJSON
 
+[![npm](https://img.shields.io/npm/v/@x-json/core)](https://www.npmjs.com/package/@x-json/core)
+[![downloads](https://img.shields.io/npm/dm/@x-json/core)](https://www.npmjs.com/package/@x-json/core)
+[![license](https://img.shields.io/npm/l/@x-json/core)](./LICENSE)
+
 xJSON (`.xjson`) is a superset of JSON5 that adds an override system and
 cross-file inheritance. A document is either plain JSON5 data or an `override`
 block that layers changes onto a base — a base inherited from another file with
@@ -99,18 +103,18 @@ by an editor file association:
 
 | Package | Description |
 |---|---|
-| `@xjson/core` | Parser, evaluator (overrides, merge, `extends`, cycle detection) and diagnostics. Pure: file access is injected through a host. |
-| `@xjson/schema` | JSON Schema written in xJSON, validated with AJV. |
-| `@xjson/language-server` | Language server over core and schema. |
-| `@xjson/grammar` | TextMate grammar and language configuration, portable to other editors. |
-| `@xjson/cli` | `eval`, `validate` and `check` commands. |
+| `@x-json/core` | Parser, evaluator (overrides, merge, `extends`, cycle detection) and diagnostics. Pure: file access is injected through a host. |
+| `@x-json/schema` | JSON Schema written in xJSON, validated with AJV. |
+| `@x-json/language-server` | Language server over core and schema. |
+| `@x-json/grammar` | TextMate grammar and language configuration, portable to other editors. |
+| `@x-json/cli` | `eval`, `validate` and `check` commands. |
 | `xjson-vscode` | VS Code extension: grammar plus a language-server client. |
 
 ## Library
 
 ```ts
-import { evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
+import { evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
 
 const { value, diagnostics } = evaluate(source, { uri: path, host: new NodeHost() });
 ```
@@ -171,7 +175,7 @@ pnpm --filter xjson-vscode run package    # build the extension as a .vsix
 pnpm --filter xjson-vscode run publish    # publish the extension to the Marketplace
 ```
 
-Publishing the packages needs an account with access to the `@xjson` scope
+Publishing the packages needs an account with access to the `@x-json` scope
 (`npm login`); the Marketplace needs a registered publisher and a personal access
 token (`vsce login <publisher>`).
 

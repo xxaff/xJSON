@@ -1,4 +1,4 @@
-import { XJSONError, evaluate, parse } from "@xjson/core";
+import { XJSONError, evaluate, parse } from "@x-json/core";
 import { describe, expect, it } from "vitest";
 import { codes, errorCodes } from "./helpers";
 

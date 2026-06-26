@@ -1,5 +1,5 @@
 {
-  "name": "@xjson/cli",
+  "name": "@x-json/cli",
   "version": "0.1.0",
   "description": "Command-line tool for the XJSON format: evaluate, validate and check.",
   "license": "MIT",
@@ -27,8 +27,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@xjson/core": "workspace:^",
-    "@xjson/schema": "workspace:^"
+    "@x-json/core": "workspace:^",
+    "@x-json/schema": "workspace:^"
   },
   "publishConfig": {
     "main": "./dist/index.cjs",

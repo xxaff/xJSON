@@ -1,4 +1,4 @@
-import { type JsonValue, evaluate } from "@xjson/core";
+import { type JsonValue, evaluate } from "@x-json/core";
 import { describe, expect, it } from "vitest";
 import { warningCodes } from "./helpers";
 

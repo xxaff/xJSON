@@ -1,5 +1,5 @@
-import { type CliEnv, run } from "@xjson/cli";
-import { MemoryHost } from "@xjson/core";
+import { type CliEnv, run } from "@x-json/cli";
+import { MemoryHost } from "@x-json/core";
 import { describe, expect, it } from "vitest";
 
 function makeEnv(files: Record<string, string>) {

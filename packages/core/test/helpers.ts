@@ -1,4 +1,4 @@
-import { type Diagnostic, type EvaluateOptions, type JsonValue, evaluate } from "@xjson/core";
+import { type Diagnostic, type EvaluateOptions, type JsonValue, evaluate } from "@x-json/core";
 
 export function evalValue(source: string, options?: EvaluateOptions): JsonValue {
   return evaluate(source, options).value;

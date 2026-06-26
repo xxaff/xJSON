@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { isAbsolute, resolve as resolvePath } from "node:path";
-import { type SeverityConfig, type XJSONHost, evaluate } from "@xjson/core";
-import { NodeHost } from "@xjson/core/node";
+import { type SeverityConfig, type XJSONHost, evaluate } from "@x-json/core";
+import { NodeHost } from "@x-json/core/node";
 import { TextDocument } from "vscode-languageserver-textdocument";
 import type { SymbolInformation } from "vscode-languageserver-types";
 import {

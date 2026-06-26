@@ -1,5 +1,5 @@
-import type { Document, JsonValue, KeyNode, ObjectOp, ValueNode } from "@xjson/core";
-import { compileSchema } from "@xjson/schema";
+import type { Document, JsonValue, KeyNode, ObjectOp, ValueNode } from "@x-json/core";
+import { compileSchema } from "@x-json/schema";
 import {
   type Diagnostic,
   DiagnosticSeverity,

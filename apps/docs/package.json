@@ -1,5 +1,5 @@
 {
-  "name": "@xjson/docs",
+  "name": "@x-json/docs",
   "version": "0.0.0",
   "private": true,
   "description": "Documentation for the XJSON format and tooling."

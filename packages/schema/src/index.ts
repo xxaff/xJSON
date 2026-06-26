@@ -1,4 +1,4 @@
-import { type Diagnostic, type EvaluateOptions, type JsonValue, evaluate } from "@xjson/core";
+import { type Diagnostic, type EvaluateOptions, type JsonValue, evaluate } from "@x-json/core";
 import type { ValidateFunction } from "ajv";
 import addFormats from "ajv-formats";
 import Ajv2020 from "ajv/dist/2020";

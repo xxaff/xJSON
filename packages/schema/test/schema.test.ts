@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { NodeHost } from "@xjson/core/node";
-import { compileSchema, validateSource, validateValue } from "@xjson/schema";
+import { NodeHost } from "@x-json/core/node";
+import { compileSchema, validateSource, validateValue } from "@x-json/schema";
 import { describe, expect, it } from "vitest";
 
 const examplesDir = resolve(dirname(fileURLToPath(import.meta.url)), "../../../examples");
@@ -13,7 +13,7 @@ function readExample(relativePath: string): { source: string; path: string } {
   return { source: readFileSync(path, "utf8"), path };
 }
 
-describe("@xjson/schema", () => {
+describe("@x-json/schema", () => {
   it("compiles a JSON Schema written in XJSON", () => {
     const { source } = readExample("schema/user.schema.xjson");
     const { diagnostics } = compileSchema(source);

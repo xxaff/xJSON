@@ -1,4 +1,4 @@
-# Command line (`@xjson/cli`)
+# Command line (`@x-json/cli`)
 
 ```
 xjson eval <file> [--compact]      Evaluate a document and print the JSON result

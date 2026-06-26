@@ -1,5 +1,5 @@
 {
-  "name": "@xjson/language-server",
+  "name": "@x-json/language-server",
   "version": "0.1.0",
   "description": "Language Server (LSP) for the XJSON format.",
   "license": "MIT",
@@ -32,8 +32,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@xjson/core": "workspace:^",
-    "@xjson/schema": "workspace:^",
+    "@x-json/core": "workspace:^",
+    "@x-json/schema": "workspace:^",
     "vscode-languageserver": "^9.0.1",
     "vscode-languageserver-textdocument": "^1.0.12",
     "vscode-languageserver-types": "3.17.5",

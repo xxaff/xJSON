@@ -1,4 +1,4 @@
-import { MemoryHost } from "@xjson/core";
+import { MemoryHost } from "@x-json/core";
 import {
   analyzeDiagnostics,
   codeActions,
@@ -15,7 +15,7 @@ import {
   renameEdits,
   selectionRanges,
   semanticTokens,
-} from "@xjson/language-server";
+} from "@x-json/language-server";
 import { describe, expect, it } from "vitest";
 import type { Position } from "vscode-languageserver-types";
 
