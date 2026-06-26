@@ -1,0 +1,57 @@
+{
+  "name": "@xjson/language-server",
+  "version": "0.1.0",
+  "description": "Language Server (LSP) for the XJSON format.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": ["xjson", "lsp", "language-server"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxaff/xJSON.git",
+    "directory": "packages/language-server"
+  },
+  "homepage": "https://github.com/xxaff/xJSON#readme",
+  "bugs": "https://github.com/xxaff/xJSON/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./server": {
+      "types": "./src/server.ts",
+      "default": "./src/server.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "prepack": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@xjson/core": "workspace:^",
+    "@xjson/schema": "workspace:^",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-languageserver-types": "3.17.5",
+    "vscode-uri": "^3.0.8"
+  },
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+        "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      },
+      "./server": {
+        "import": "./dist/server.js",
+        "require": "./dist/server.cjs"
+      }
+    }
+  }
+}
