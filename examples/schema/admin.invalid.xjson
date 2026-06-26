@@ -1,0 +1,12 @@
+/*
+  The same instance with mistakes, to see schema validation in action.
+  Each marked line violates admin.schema.xjson and should be reported.
+*/
+{
+  $schema: "./admin.schema.xjson",
+  id: 0,                      // ❌ minimum is 1
+  role: "superuser",          // ❌ not in the enum [admin, user, guest]
+  permissions: "everything",  // ❌ should be an array of strings
+  extra: true,                // ❌ additionalProperties is false
+  // ❌ required property `name` is missing
+}

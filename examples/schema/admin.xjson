@@ -1,0 +1,14 @@
+/*
+  An INSTANCE validated against admin.schema.xjson.
+
+  The `$schema` key points to the schema file; the editor validates this
+  document against it live. Try breaking a value (see admin.invalid.xjson)
+  to watch the diagnostics appear.
+*/
+{
+  $schema: "./admin.schema.xjson",
+  id: 1,
+  name: "Grace Hopper",
+  role: "admin",
+  permissions: ["read", "write"],
+}

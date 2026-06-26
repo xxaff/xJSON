@@ -14,32 +14,32 @@ override extends "./base.xjson" {
   // inherit + MOVE by textual order
   // user: id, name, role, active
   override user: {
-    override role;       // moves role
-    inherit;             // non-mentioned inherited keys (id, name, active), in base order
-    override id;         // moves id
+    override role,       // moves role
+    inherit,             // non-mentioned inherited keys (id, name, active), in base order
+    override id,         // moves id
     // Resulting keys: role, name, active, id
-  };
+  },
 
   // MOVE with before/after  +  EXTEND (merge) a subproperty with `after`
   // server: host, port, timeout, mask, headers
   override server: {
-    override timeout before host;        // move: before
-    override mask after host;            // move: after
+    override timeout before host,        // move: before
+    override mask after host,            // move: after
     override headers after port: {       // extend subproperty (merge) + reposition (after)
-      add encoding: "gzip";
-    };
-    inherit;
-  };
+      add encoding: "gzip",
+    },
+    inherit,
+  },
 
   // ADD with before/after  +  EXTEND (merge) a subproperty with `before`
   // features: logging, cache
   override features: {
-    add audit before logging: true;      // add new: before
-    add metrics after logging: false;    // add new: after
+    add audit before logging: true,      // add new: before
+    add metrics after logging: false,    // add new: after
     override cache before logging: {      // extend subproperty (merge) + reposition (before)
-      enabled: true;
-    };
-    inherit;
-  };
+      enabled: true,
+    },
+    inherit,
+  },
 
 }

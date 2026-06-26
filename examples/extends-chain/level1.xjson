@@ -8,18 +8,18 @@
 */
 override extends "../base.xjson" {
 
-  version: "1.1.0";                // replaces the inherited value
-  add stage: "level1";            // new property
+  version: "1.1.0",                // replaces the inherited value
+  add stage: "level1",            // new property
 
   override server: {              // merges the inherited object
-    port: 9090;                   // replaces
-    add tls: true;                // adds
-  };
+    port: 9090,                   // replaces
+    add tls: true,                // adds
+  },
 
   override features: {
     override cache: {             // nested merge
-      enabled: true;
-    };
-  };
+      enabled: true,
+    },
+  },
 
 }

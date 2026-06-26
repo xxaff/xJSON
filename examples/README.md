@@ -24,11 +24,27 @@ and demonstrates a set of cases.
 | [`extends-chain/level1.xjson`](./extends-chain/level1.xjson) · [`level2.xjson`](./extends-chain/level2.xjson) | **Inheritance chain**: `base → level1 → level2`. |
 | [`schema/user.schema.xjson`](./schema/user.schema.xjson) | Standard **JSON Schema** written in XJSON. |
 | [`schema/admin.schema.xjson`](./schema/admin.schema.xjson) | A schema that **extends** another via `extends`. |
+| [`schema/admin.xjson`](./schema/admin.xjson) · [`admin.invalid.xjson`](./schema/admin.invalid.xjson) | **Instances** validated against a schema via `$schema` (a valid one and an invalid one). |
+
+## Validating data against a schema
+
+An instance document associates itself with a schema through a top-level
+`$schema` key pointing to a `.xjson` schema (relative or Node-style path):
+
+```
+{ $schema: "./admin.schema.xjson", id: 1, name: "Grace", role: "admin", permissions: ["read"] }
+```
+
+The editor compiles the schema (resolving its `extends` chain) and validates the
+document live — open `admin.invalid.xjson` to see the violations reported. The
+`$schema` key itself is ignored during validation.
 
 ## Syntax-layer conventions
 
-- **Data** → JSON5 (commas between elements, trailing comma allowed).
-- **Operations** (inside `override { }`) → each operation ends with `;`.
-- **Relative position** → `before`/`after <key>` goes between the name and the
+- XJSON is a **superset of JSON5**: items are separated by **commas** in both
+  data and operation blocks, and a **trailing comma** is allowed. There is no
+  `;` separator.
+- `override` switches a block into **operation mode** (merge); without it, a
+  `{ }` / `[ ]` body is a plain JSON5 **literal** (replace).
+- **Relative position**: `before`/`after <key>` goes between the name and the
   optional `:value`: `<op> <prop> (before|after) <other> [: value]`.
-- Mnemonic: **comma = data, `;` = operations**.

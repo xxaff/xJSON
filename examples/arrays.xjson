@@ -2,23 +2,23 @@
   Operations on ARRAYS, extending base.xjson.
 
   Inside `override <key>: [ ... ]` the body is operation mode (each one ends
-  with `;`). Indices are evaluated against the MUTATING STATE: every operation
+  with `,`). Indices are evaluated against the MUTATING STATE: every operation
   sees the array as left by the previous ones.
 */
 override extends "./base.xjson" {
 
   // base.tags = ["json5", "override", "schema"]
   override tags: [
-    add "v2";          // at the end          -> [json5, override, schema, v2]
-    add(0) "core";     // at index 0           -> [core, json5, override, schema, v2]
-    delete(1);         // removes index 1      -> [core, override, schema, v2]
-    "extra";           // no keyword = add at the end -> [core, override, schema, v2, extra]
-  ];
+    add "v2",          // at the end          -> [json5, override, schema, v2]
+    add(0) "core",     // at index 0           -> [core, json5, override, schema, v2]
+    delete(1),         // removes index 1      -> [core, override, schema, v2]
+    "extra",           // no keyword = add at the end -> [core, override, schema, v2, extra]
+  ],
 
   // `clear` is ONLY valid at the start of the array block
   override plugins: [
-    clear;             // empties  -> []
-    add "fresh";       // result   -> [fresh]
-  ];
+    clear,             // empties  -> []
+    add "fresh",       // result   -> [fresh]
+  ],
 
 }

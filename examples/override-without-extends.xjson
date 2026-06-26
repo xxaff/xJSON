@@ -11,10 +11,10 @@
 override {
 
   override server: {
-    port: 9090;
-    add tls: true;
-  };
+    port: 9090,
+    add tls: true,
+  },
 
-  add banner: "injected value";
+  add banner: "injected value",
 
 }

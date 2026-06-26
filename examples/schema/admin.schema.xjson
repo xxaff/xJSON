@@ -6,14 +6,14 @@
 */
 override extends "./user.schema.xjson" {
 
-  title: "Admin";
+  title: "Admin",
 
   override properties: {
-    add permissions: { type: "array", items: { type: "string" } };
-  };
+    add permissions: { type: "array", items: { type: "string" } },
+  },
 
   override required: [
-    add "permissions";   // required becomes ["id", "name", "permissions"]
-  ];
+    add "permissions",   // required becomes ["id", "name", "permissions"]
+  ],
 
 }

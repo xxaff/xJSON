@@ -1,46 +1,46 @@
 /*
   Extending objects and MERGING nested properties at several levels.
 
-  An .xjson file is a single block; here that block is an `override` that
+  An .xjson file is a single block, here that block is an `override` that
   extends base.xjson. `override <key>: { ... }` MERGES instead of replacing,
   and can be nested as deep as needed.
 
   Object operations:
-    prop: v;            -> upsert (create or replace), positions here
-    add prop: v;        -> same, but semantic and allows after/before
-    override prop;      -> reposition without touching the value
-    override prop: v;   -> merge the value
-    delete prop;        -> remove the property
+    prop: v,            -> upsert (create or replace), positions here
+    add prop: v,        -> same, but semantic and allows after/before
+    override prop,      -> reposition without touching the value
+    override prop: v,   -> merge the value
+    delete prop,        -> remove the property
 */
 override extends "./base.xjson" {
 
   // Level 1: the `user` object
   override user: {
-    name: "Ada Lovelace";     // prop: v -> replaces an existing key
-    theme: "dark";            // prop: v -> creates a new key (upsert, no `add`)
-    add email: "ada@x.io";    // add -> identical, but semantic (allows after/before)
-    override role;            // repositions role; its value ("admin") is unchanged
-    delete active;            // removes the property
-  };
+    name: "Ada Lovelace",     // prop: v -> replaces an existing key
+    theme: "dark",            // prop: v -> creates a new key (upsert, no `add`)
+    add email: "ada@x.io",    // add -> identical, but semantic (allows after/before)
+    override role,            // repositions role, its value ("admin") is unchanged
+    delete active,            // removes the property
+  },
 
   // Nested merge: server -> headers (level 2)
   override server: {
-    port: 9090;               // replaces
+    port: 9090,               // replaces
     override headers: {
-      auth: "Bearer xyz";     // replaces
-      add encoding: "gzip";   // adds
-    };
-  };
+      auth: "Bearer xyz",     // replaces
+      add encoding: "gzip",   // adds
+    },
+  },
 
   // Nested merge: features -> cache -> store (level 3)
   override features: {
     override cache: {
-      enabled: true;
+      enabled: true,
       override store: {
-        max: 500;
-        add evict: "lru";
-      };
-    };
-  };
+        max: 500,
+        add evict: "lru",
+      },
+    },
+  },
 
 }
