@@ -1,0 +1,32 @@
+{
+  "Override block": {
+    "prefix": "override",
+    "body": ["override {", "\t$0", "}"],
+    "description": "An XJSON override block"
+  },
+  "Override extends": {
+    "prefix": "extends",
+    "body": ["override extends \"${1:./base.xjson}\" {", "\t$0", "}"],
+    "description": "Extend another XJSON file"
+  },
+  "Add property": {
+    "prefix": "add",
+    "body": ["add ${1:key}: ${2:value},"],
+    "description": "Add a new property"
+  },
+  "Override (merge) property": {
+    "prefix": "merge",
+    "body": ["override ${1:key}: {", "\t$0", "},"],
+    "description": "Merge into an existing object property"
+  },
+  "Delete property": {
+    "prefix": "delete",
+    "body": ["delete ${1:key},"],
+    "description": "Delete a property"
+  },
+  "Inherit placeholder": {
+    "prefix": "inherit",
+    "body": ["inherit,"],
+    "description": "Mark where inherited keys go"
+  }
+}

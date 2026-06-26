@@ -1,0 +1,130 @@
+{
+  "name": "xjson-vscode",
+  "displayName": "XJSON",
+  "description": "Syntax highlighting, diagnostics and rich language features for the XJSON format.",
+  "version": "0.1.0",
+  "private": true,
+  "publisher": "xjson",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "main": "./dist/extension.js",
+  "activationEvents": ["onLanguage:xjson"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "xjson",
+        "aliases": ["XJSON", "xjson"],
+        "extensions": [".xjson"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "xjson",
+        "scopeName": "source.xjson",
+        "path": "./syntaxes/xjson.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "xjson",
+        "path": "./snippets/xjson.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "xjson.preview",
+        "title": "Preview Evaluated JSON",
+        "category": "XJSON",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "xjson.restartServer",
+        "title": "Restart Language Server",
+        "category": "XJSON"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "xjson.preview",
+          "when": "resourceLangId == xjson",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "xjson.preview",
+          "when": "resourceLangId == xjson"
+        },
+        {
+          "command": "xjson.restartServer"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "XJSON",
+      "properties": {
+        "xjson.diagnostics": {
+          "type": "object",
+          "default": {},
+          "markdownDescription": "Per-code diagnostic severity overrides, e.g. `{ \"type-mismatch-override\": \"off\" }`.",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["error", "warning", "off"]
+          }
+        },
+        "xjson.inlayHints.enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show each top-level key's evaluated value as an inlay hint (off by default)."
+        },
+        "xjson.codeLens.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show code lenses (evaluated-JSON preview and the extends target)."
+        },
+        "xjson.schemas": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "Associate XJSON schemas with files by glob (like `json.schemas`). Example: `[{ \"fileMatch\": [\"**/*.config.xjson\"], \"url\": \"./schemas/config.schema.xjson\" }]`.",
+          "items": {
+            "type": "object",
+            "required": ["fileMatch", "url"],
+            "properties": {
+              "fileMatch": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Glob patterns matched against the file path."
+              },
+              "url": {
+                "type": "string",
+                "description": "Path to an .xjson schema, relative to the workspace folder (or absolute)."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "vscode:prepublish": "node esbuild.mjs",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@xjson/core": "workspace:*",
+    "@xjson/language-server": "workspace:*",
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "@xjson/grammar": "workspace:*",
+    "esbuild": "^0.24.2"
+  }
+}
