@@ -1,6 +1,6 @@
 {
   "name": "@x-json/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parser and evaluator for XJSON, a superset of JSON5 with overrides and cross-file inheritance.",
   "license": "MIT",
   "type": "module",
@@ -37,12 +37,24 @@
     "types": "./dist/index.d.ts",
     "exports": {
       ".": {
-        "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-        "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
       },
       "./node": {
-        "import": { "types": "./dist/node-host.d.ts", "default": "./dist/node-host.js" },
-        "require": { "types": "./dist/node-host.d.cts", "default": "./dist/node-host.cjs" }
+        "import": {
+          "types": "./dist/node-host.d.ts",
+          "default": "./dist/node-host.js"
+        },
+        "require": {
+          "types": "./dist/node-host.d.cts",
+          "default": "./dist/node-host.cjs"
+        }
       }
     }
   }
