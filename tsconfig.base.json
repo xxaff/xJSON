@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@xjson/core": ["./packages/core/src/index.ts"],
+      "@xjson/core/node": ["./packages/core/src/node-host.ts"],
+      "@xjson/schema": ["./packages/schema/src/index.ts"],
+      "@xjson/cli": ["./packages/cli/src/index.ts"],
+      "@xjson/language-server": ["./packages/language-server/src/index.ts"]
+    }
+  }
+}

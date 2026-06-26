@@ -1,2 +1,26 @@
 # Editor
 .vscode/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+*.tsbuildinfo
+*.vsix
+
+# VSCode extension build artifacts (copied from @xjson/grammar at build time)
+/apps/vscode/syntaxes/
+/apps/vscode/language-configuration.json
+
+# Test / coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
