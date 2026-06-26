@@ -14,7 +14,11 @@
     "format": "biome format --write .",
     "build": "pnpm -r --filter \"./packages/*\" run build",
     "build:vscode": "node apps/vscode/esbuild.mjs",
+    "version:packages": "pnpm -r --filter \"./packages/*\" exec npm version --no-git-tag-version",
     "release": "pnpm run build && pnpm -r --filter \"./packages/*\" publish --access public --no-git-checks",
+    "release:patch": "pnpm run version:packages patch && pnpm run release",
+    "release:minor": "pnpm run version:packages minor && pnpm run release",
+    "release:major": "pnpm run version:packages major && pnpm run release",
     "check": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
